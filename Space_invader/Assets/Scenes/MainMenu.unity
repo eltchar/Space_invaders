@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 425512686}
   - component: {fileID: 425512688}
   m_Layer: 5
-  m_Name: Text_score_h
+  m_Name: TextScoreHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -920,6 +920,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647839218}
   m_CullTransparentMesh: 0
+--- !u!1 &811131717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 811131719}
+  - component: {fileID: 811131718}
+  m_Layer: 0
+  m_Name: MenuMenager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &811131718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811131717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6eb1f788806f20498344372c0911e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreRankText: {fileID: 1083897281}
+  gamesCountText: {fileID: 2054194735}
+--- !u!4 &811131719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811131717}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.387918, y: 0.40670675, z: -18.19336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &905643697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,7 +1173,7 @@ GameObject:
   - component: {fileID: 1083897282}
   - component: {fileID: 1083897281}
   m_Layer: 5
-  m_Name: Text_score
+  m_Name: TextScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1381,6 +1426,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155941a3b71fd004ea06ef06896c9231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityDirection: 1
+  difficultyModifier: 0
+  score: 0
+  collumnCount: 0000000000000000000000000000000000000000000000000000000000000000
+  enemyCount: 32
+  rankingData:
+    scoreRanking: 
+    gamesCount: 0
 --- !u!4 &1895636275
 Transform:
   m_ObjectHideFlags: 0
@@ -1610,8 +1663,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1895636274}
-        m_MethodName: MoveToLevel1
+      - m_Target: {fileID: 811131718}
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1671,7 +1724,7 @@ GameObject:
   - component: {fileID: 2054194735}
   - component: {fileID: 2054194737}
   m_Layer: 5
-  m_Name: Text_total
+  m_Name: TextTotal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1828,7 +1881,7 @@ GameObject:
   - component: {fileID: 2102149756}
   - component: {fileID: 2102149759}
   m_Layer: 5
-  m_Name: Button_back
+  m_Name: ButtonBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
