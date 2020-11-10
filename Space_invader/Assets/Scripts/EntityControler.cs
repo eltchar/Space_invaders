@@ -3,7 +3,7 @@
 public class EntityControler : MonoBehaviour
 {
     //Movement variables
-    private float moveSpeed = 1f;
+    private float moveSpeed = 0.75f;
     private Rigidbody2D entityRb;
     private float moveDistance = 1f;
     private Vector3 prevPos;

@@ -14,6 +14,8 @@ public class GameManagerScript : MonoBehaviour
     public int enemyCount = 32;
     public RankingData rankingData;
     private string pathToScores;
+    public bool powerUpEnabled = false;
+
 
     private void Awake()
     {
