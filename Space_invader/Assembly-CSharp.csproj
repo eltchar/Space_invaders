@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\CameraScaler.cs" />
     <Compile Include="Assets\Scripts\EntityControler.cs" />
     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\ProjectileControler.cs" />
     <Compile Include="Assets\Scripts\RankingData.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Sound.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

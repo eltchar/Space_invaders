@@ -21,6 +21,7 @@ public class ProjectileControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.instance.Play("LaserSFX");
         projeticleRb = GetComponent<Rigidbody2D>();
         if (isPlayerProjectile)
         {
@@ -50,6 +51,7 @@ public class ProjectileControler : MonoBehaviour
         // if player hit enemy destroy it and projectile
         if (collision.gameObject.layer == 9 && isPlayerProjectile)
         {
+            AudioManager.instance.Play("ExplosionSFX");
             GameManagerScript.instance.difficultyModifier += 0.05f;
             Destroy(collision.gameObject);
             GameManagerScript.instance.score += 1;
@@ -58,6 +60,7 @@ public class ProjectileControler : MonoBehaviour
         // if hit player destroy projectile and remove score equal to 2*column from hit originated
         if (collision.gameObject.layer == 11 && !isPlayerProjectile)
         {
+            AudioManager.instance.Play("ShieldHitSFX");
             GameManagerScript.instance.score -= 2 * GameManagerScript.instance.collumnCount[parentColumn];
             Destroy(gameObject);
         }

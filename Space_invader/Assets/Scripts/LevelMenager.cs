@@ -40,9 +40,15 @@ public class LevelMenager : MonoBehaviour
 
     public void EnablePowerUp()
     {
+        AudioManager.instance.Play("PowerUpSFX");
         GameManagerScript.instance.powerUpEnabled = true;
         powerUpCdTimer = 40f;
         powerUpButton.interactable = false;
         powerUpText.text = "Active";
+    }
+
+    public void ReturnToMenu()
+    {
+        GameManagerScript.instance.MoveToMainMenu();
     }
 }

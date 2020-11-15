@@ -1,14 +1,22 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuMenager : MonoBehaviour
 {
     public TextMeshProUGUI scoreRankText;
     public TextMeshProUGUI gamesCountText;
+    private Slider sliderBGM;
+    private Slider sliderSFX;
     // Start is called before the first frame update
     void Start()
     {
         UpdateScore();
+        sliderBGM = GameObject.Find("Slider_BGM").GetComponent<Slider>();
+        sliderBGM.value = AudioManager.instance.BGMVolume;
+        sliderSFX = GameObject.Find("Slider_SFX").GetComponent<Slider>();
+        sliderSFX.value = AudioManager.instance.SFXVolume;
+        GameObject.Find("OptionsMenu").SetActive(false);
     }
 
     private void UpdateScore()
@@ -32,8 +40,12 @@ public class MainMenuMenager : MonoBehaviour
         GameManagerScript.instance.MoveToLevel1();
     }
 
-    public void UpdateRanking()
+    public void ChangeSFXVolume(float volume)
     {
-
+        AudioManager.instance.ChangeSFXVolume(volume);
+    }
+    public void ChangeBGMVolume(float volume)
+    {
+        AudioManager.instance.ChangeBGMVolume(volume);
     }
 }
