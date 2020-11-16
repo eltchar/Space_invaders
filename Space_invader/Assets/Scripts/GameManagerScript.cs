@@ -2,11 +2,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using System;
 
 public class GameManagerScript : MonoBehaviour
 {
 
     public static GameManagerScript instance { get; private set; }
+    public event EventHandler OnDeathEvent;
+    public event EventHandler OnUiUpdateEvent;
+    public int liveCount = 3;
     public int entityDirection = 1;
     public float difficultyModifier = 0f;
     public int score = 0;
@@ -48,6 +52,14 @@ public class GameManagerScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void DeathEvent(object sender, EventArgs e)
+    {
+        OnDeathEvent?.Invoke(sender, e);
+    }
+    public void UiUpdateEvent(object sender, EventArgs e)
+    {
+        OnUiUpdateEvent?.Invoke(sender, e);
+    }
 
     public void ResetLevel1()
     {
@@ -59,6 +71,7 @@ public class GameManagerScript : MonoBehaviour
         score = 0;
         entityDirection = 1;
         enemyCount = 32;
+        liveCount = 3;
     }
 
     public void MoveToLevel1()

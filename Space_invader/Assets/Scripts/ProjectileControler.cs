@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ProjectileControler : MonoBehaviour
 {
@@ -55,13 +56,13 @@ public class ProjectileControler : MonoBehaviour
             GameManagerScript.instance.difficultyModifier += 0.05f;
             Destroy(collision.gameObject);
             GameManagerScript.instance.score += 1;
+            GameManagerScript.instance.UiUpdateEvent(this, EventArgs.Empty);
             Destroy(gameObject);
         }
         // if hit player destroy projectile and remove score equal to 2*column from hit originated
         if (collision.gameObject.layer == 11 && !isPlayerProjectile)
         {
-            AudioManager.instance.Play("ShieldHitSFX");
-            GameManagerScript.instance.score -= 2 * GameManagerScript.instance.collumnCount[parentColumn];
+            GameManagerScript.instance.DeathEvent(this, EventArgs.Empty);
             Destroy(gameObject);
         }
     }
